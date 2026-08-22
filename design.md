@@ -10,10 +10,10 @@ The experience assumes portrait orientation and one-handed use. The home screen 
 
 | Screen | Primary content and functionality |
 |---|---|
-| Daily Page | Shows the current date, a short welcome, one daily intention field, the three-priority rail, and a rapid-log composer. Users can add tasks, notes, feelings, and events, complete or delete entries, and navigate to the review tab. |
-| Review | Shows a compassionate end-of-day prompt, a short reflection field, completion summary, and a weekly pattern card. It emphasizes noticing rather than scoring. |
-| Entries | Shows a chronological history of recent daily pages, with filters for task, note, feeling, and event. Selecting a day opens its saved entries. |
-| Settings | Shows local-only storage reassurance, the current visual theme, and a reset option with confirmation. No account or sync is proposed. |
+| Daily Page | Shows the current date, a short welcome, one daily intention field, a one-tap mood check-in, the three-priority rail, and a rapid-log composer. Users can add tasks, notes, feelings, and events, complete or delete entries, and navigate to the review tab. Unfinished tasks from a previous day appear with a migrated marker and a gentle notice. |
+| Review | Shows a compassionate end-of-day prompt, a short reflection field, a completion summary, and a 7-day pattern card (mood + log counts). It emphasizes noticing rather than scoring. |
+| Entries | Shows a daily index strip of recent pages (today plus history) and lets the user select any day to browse its entries, with filters for task, note, feeling, and event. |
+| Settings | Shows a running count of pages kept and total rapid logs, local-only storage reassurance, the current visual theme, and a reset option with confirmation. No account or sync is proposed. |
 
 ## Key user flows
 
@@ -32,6 +32,10 @@ The user opens Review, sees what they captured, and answers “What helped me mo
 ### Return after a gap
 
 If there are no entries for the current day, the home screen simply welcomes the user back with “A fresh page is enough.” There are no missed-day warnings, streak breaks, or guilt-inducing alerts.
+
+### Migrate, don't lose
+
+When the user opens the app on a new day, the previous day is quietly closed: any unfinished tasks are copied onto the fresh page with a small arrow marker and a "carried forward, no judgment" notice, and the previous day itself is preserved in history rather than discarded. This mirrors the analog bullet-journal habit of migrating unfinished items instead of losing them, while keeping the tone free of guilt.
 
 ## Visual system
 

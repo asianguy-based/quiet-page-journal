@@ -20,3 +20,14 @@
 - [x] Prepare Quiet Page source for GitHub upload
 - [ ] Create or select the GitHub repository and push the project
 - [ ] Verify the GitHub repository contents and link
+
+- [x] Persist finished days into real history with day-rollover on relaunch
+- [x] Migrate unfinished tasks forward (bullet-journal style) with a gentle notice
+- [x] Add one-tap daily mood check-in
+- [x] Add delete for rapid-log entries
+- [x] Add 7-day pattern card to Review (mood + log counts, no scoring)
+- [x] Turn Pages into a real daily index: browse any recent day, not just today
+- [x] Show running "pages kept" / "logs" record on Settings
+- [x] Add light haptic feedback to primary log/complete/migrate actions
+- [x] Remove stray debug console.log from ThemeProvider
+- [x] Re-run typecheck, lint, and tests after the update
