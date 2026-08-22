@@ -16,3 +16,7 @@
 
 - [x] Add smooth, restrained transitions between Today and Pages views
 - [x] Validate animation behavior and save an enhancement checkpoint
+
+- [x] Prepare Quiet Page source for GitHub upload
+- [ ] Create or select the GitHub repository and push the project
+- [ ] Verify the GitHub repository contents and link
