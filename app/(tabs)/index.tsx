@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { FlatList, KeyboardAvoidingView, Platform, Pressable, Text, TextInput, View } from "react-native";
 import { ScreenContainer } from "@/components/screen-container";
+import { PageTransition } from "@/components/page-transition";
 import { useJournal, type EntryType } from "@/lib/journal-context";
 import { useColors } from "@/hooks/use-colors";
 
@@ -28,7 +29,8 @@ export default function HomeScreen() {
 
   return (
     <ScreenContainer className="px-5" containerClassName="bg-background">
-      <KeyboardAvoidingView className="flex-1" behavior={Platform.OS === "ios" ? "padding" : undefined}>
+      <PageTransition offset={6}>
+        <KeyboardAvoidingView className="flex-1" behavior={Platform.OS === "ios" ? "padding" : undefined}>
         <FlatList
           data={day.entries}
           keyExtractor={(item) => item.id}
@@ -56,7 +58,8 @@ export default function HomeScreen() {
           renderItem={({ item }) => <View className="mb-3 flex-row items-start rounded-2xl border border-border bg-surface px-4 py-4"><Text className="mr-3 mt-0.5 text-xl font-bold text-primary">{symbols.find((s) => s.type === item.type)?.symbol}</Text><Pressable onPress={() => item.type === "task" && toggleEntry(item.id)} className="flex-1"><Text className={`text-base leading-6 text-foreground ${item.completed ? "line-through opacity-50" : ""}`}>{item.text}</Text><Text className="mt-1 text-xs capitalize text-muted">{item.type} · {new Date(item.createdAt).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}</Text></Pressable></View>}
           ListEmptyComponent={<Text className="rounded-2xl bg-surface px-4 py-5 text-center text-sm leading-6 text-muted">A blank page is not behind. It is a place to begin.</Text>}
         />
-      </KeyboardAvoidingView>
+        </KeyboardAvoidingView>
+      </PageTransition>
     </ScreenContainer>
   );
 }

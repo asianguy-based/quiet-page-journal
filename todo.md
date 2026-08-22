@@ -13,3 +13,6 @@
 - [x] Run typecheck, lint, and tests
 - [x] Verify preview on desktop and mobile-sized viewports
 - [x] Save final checkpoint and deliver project version
+
+- [x] Add smooth, restrained transitions between Today and Pages views
+- [x] Validate animation behavior and save an enhancement checkpoint
