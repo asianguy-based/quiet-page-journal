@@ -1,0 +1,9 @@
+import { Alert, Pressable, Text, View } from "react-native";
+import { ScreenContainer } from "@/components/screen-container";
+import { useJournal } from "@/lib/journal-context";
+
+export default function SettingsScreen() {
+  const { resetAll } = useJournal();
+  const confirmReset = () => Alert.alert("Start fresh?", "This removes the journal stored on this device. This cannot be undone.", [{ text: "Cancel", style: "cancel" }, { text: "Reset journal", style: "destructive", onPress: resetAll }]);
+  return <ScreenContainer className="px-5" containerClassName="bg-background"><Text className="pt-6 text-xs font-semibold uppercase tracking-widest text-primary">Quiet Page</Text><Text className="mt-2 text-3xl font-bold text-foreground">A little space.</Text><Text className="mt-2 text-base leading-6 text-muted">Simple choices help the page stay yours.</Text><View className="mt-8 rounded-3xl border border-border bg-surface p-5"><Text className="text-lg font-bold text-foreground">Private by default</Text><Text className="mt-2 text-sm leading-6 text-muted">Your journal is saved locally on this device. There are no accounts, feeds, streaks, or notifications competing for your attention.</Text></View><View className="mt-4 rounded-3xl border border-border bg-surface p-5"><Text className="text-lg font-bold text-foreground">The method</Text><Text className="mt-2 text-sm leading-6 text-muted">Capture quickly. Choose three priorities. Review with curiosity. Adapt the page to your life instead of forcing your life into the page.</Text></View><Pressable onPress={confirmReset} style={({ pressed }) => [{ opacity: pressed ? 0.65 : 1 }]} className="mt-8 rounded-2xl border border-error px-5 py-4"><Text className="text-center text-base font-semibold text-error">Reset local journal</Text></Pressable><Text className="mt-6 text-center text-xs leading-5 text-muted">Quiet Page · a calmer way to return to what matters</Text></ScreenContainer>;
+}
